@@ -1,0 +1,40 @@
+[
+  {
+    "name": "sdk-build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "pods-current",
+    "command": [
+      "pod",
+      "update",
+      "PurchasesHybridCommon",
+      "RevenueCat",
+      "--repo-update"
+    ],
+    "exit": 0
+  },
+  {
+    "name": "build-before",
+    "command": [
+      "xcodebuild",
+      "build",
+      "-workspace",
+      "App.xcworkspace",
+      "-scheme",
+      "App",
+      "-destination",
+      "platform=iOS Simulator,id=286DC73D-2455-4F1B-A4A2-56E3BDEE64D9",
+      "-derivedDataPath",
+      "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/current-apps/cordova/derived",
+      "IPHONEOS_DEPLOYMENT_TARGET=27.0",
+      "CODE_SIGNING_ALLOWED=NO"
+    ],
+    "exit": 0
+  }
+]

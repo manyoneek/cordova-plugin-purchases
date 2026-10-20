@@ -1,0 +1,13 @@
+{
+  "id": "RC-CORDOVA-20261015-002",
+  "repository": "RevenueCat/cordova-plugin-purchases",
+  "commit": "7ef935c1b5bb763c6c2511f1dd88587c5c946a00",
+  "pullRequest": "https://github.com/RevenueCat/cordova-plugin-purchases/pull/134",
+  "mergedDate": "2022-06-29",
+  "firstStableSourceTag": "3.0.0",
+  "classification": "Regression introduced by the Objective-C-to-Swift migration.",
+  "evidence": "The preceding Objective-C bridge forwards scalar null and mixed null/string maps. The migration introduced `as? NSString` and `as? [String: String]` guards, rejecting both. Historical execution reproduces both rejections while empty-string controls pass. The parent already documented null display-name deletion and typed attribute values as `string | null`; its pinned PHC 1.10.0 normalized nulls. The change also appears in prerelease tag `3.0.0-rc.1`.",
+  "limitations": "Historical bridge methods executed with recording dependency shims. Parent shared-library normalization was source-checked, not run through a complete historical app or server.",
+  "investigatedAt": "2026-10-17",
+  "evidenceDirectory": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/history/2026-10-17"
+}
