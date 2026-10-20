@@ -1,0 +1,63 @@
+[
+  {
+    "label": "install",
+    "command": [
+      "npm",
+      "install",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-attributes",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-attributes-install.log",
+    "seconds": 18.56
+  },
+  {
+    "label": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-attributes",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-attributes-build.log",
+    "seconds": 4.65
+  },
+  {
+    "label": "regression-before",
+    "command": [
+      "python3",
+      "tests/attributes_native_contract.py"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-attributes",
+    "exit": 1,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-attributes-regression-before.log",
+    "seconds": 1.05
+  },
+  {
+    "label": "regression-after",
+    "command": [
+      "python3",
+      "tests/attributes_native_contract.py"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-attributes",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-attributes-regression-after.log",
+    "seconds": 0.54
+  },
+  {
+    "label": "full-after",
+    "command": [
+      "npm",
+      "test",
+      "--",
+      "--runInBand"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-attributes",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-attributes-full-after.log",
+    "seconds": 1.82
+  }
+]

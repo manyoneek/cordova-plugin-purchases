@@ -1,0 +1,13 @@
+{
+  "id": "RC-CORDOVA-20261015-001",
+  "repository": "RevenueCat/cordova-plugin-purchases",
+  "commit": "12ca771118072cfdb336b7db7254c6f14ec72c65",
+  "pullRequest": "https://github.com/RevenueCat/cordova-plugin-purchases/pull/920",
+  "mergedDate": "2026-04-09",
+  "firstStableSourceTag": "7.3.6",
+  "classification": "Regression from the Cordova iOS 8 compatibility change.",
+  "evidence": "The original currency implementation in [#705](https://github.com/RevenueCat/cordova-plugin-purchases/pull/705) preserved the optional cache. #920 added `?? [:]`. Executing the unchanged historical method before and after #920 changes an absent cache from `null` to `{}`; the populated-cache control remains `{\"all\":{}}`.",
+  "limitations": "Historical method bodies compiled with a nullable result/recording Cordova shim. This isolates the fallback change; full historical Cordova runtime builds were not executed.",
+  "investigatedAt": "2026-10-17",
+  "evidenceDirectory": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/history/2026-10-17"
+}

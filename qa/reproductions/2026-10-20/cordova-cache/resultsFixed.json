@@ -1,0 +1,96 @@
+{
+  "repository": "RevenueCat/cordova-plugin-purchases",
+  "commit": "1e3266d79dcef0ce24b0a87fce10189143bc5886",
+  "platform": "iOS simulator",
+  "projectId": "proj602cc762",
+  "appId": "app4ca00b430f",
+  "user": "sdk-bug-reporter-cordova-1792055722953",
+  "checks": [
+    {
+      "name": "Test Store synthetic user initialized",
+      "pass": true,
+      "actual": "sdk-bug-reporter-cordova-1792055722953"
+    },
+    {
+      "name": "Unfetched cache is null",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "Fetched currencies round-trip through cache",
+      "pass": true,
+      "actual": {
+        "all": {}
+      }
+    },
+    {
+      "name": "Invalidated cache is null",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "String setter reaches real SDK storage",
+      "pass": true,
+      "actual": {
+        "qa_null_delete": "original",
+        "$displayName": "QA original name",
+        "qa_keep": "control"
+      }
+    },
+    {
+      "name": "Null display name queues deletion",
+      "pass": true,
+      "actual": ""
+    },
+    {
+      "name": "Null custom attribute queues deletion",
+      "pass": true,
+      "actual": ""
+    },
+    {
+      "name": "Sibling string update survives null map value",
+      "pass": true,
+      "actual": "updated"
+    },
+    {
+      "name": "Empty-string deletion works as control",
+      "pass": true,
+      "actual": {
+        "qa_null_delete": "",
+        "qa_keep": "updated",
+        "$displayName": ""
+      }
+    }
+  ],
+  "observations": {
+    "initialCache": null,
+    "fetched": {
+      "all": {}
+    },
+    "cached": {
+      "all": {}
+    },
+    "invalidatedCache": null,
+    "attributesBefore": {
+      "qa_null_delete": "original",
+      "$displayName": "QA original name",
+      "qa_keep": "control"
+    },
+    "attributesAfterNull": {
+      "qa_null_delete": "",
+      "qa_keep": "updated",
+      "$displayName": ""
+    },
+    "attributesAfterEmpty": {
+      "qa_null_delete": "",
+      "qa_keep": "updated",
+      "$displayName": ""
+    }
+  },
+  "finished": true,
+  "passed": 9,
+  "failed": 0,
+  "binaryPath": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/runs/2026-10-15/derived/Build/Products/Debug-iphonesimulator/CordovaRepro.app",
+  "recording": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/runs/2026-10-15/evidence/fixed.mp4",
+  "screenshot": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/runs/2026-10-15/evidence/fixed.png"
+}

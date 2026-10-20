@@ -1,0 +1,63 @@
+[
+  {
+    "label": "install",
+    "command": [
+      "npm",
+      "install",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-cache",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-cache-install.log",
+    "seconds": 19.73
+  },
+  {
+    "label": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-cache",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-cache-build.log",
+    "seconds": 4.88
+  },
+  {
+    "label": "regression-before",
+    "command": [
+      "python3",
+      "tests/cache_native_contract.py"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-cache",
+    "exit": 1,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-cache-regression-before.log",
+    "seconds": 0.81
+  },
+  {
+    "label": "regression-after",
+    "command": [
+      "python3",
+      "tests/cache_native_contract.py"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-cache",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-cache-regression-after.log",
+    "seconds": 0.54
+  },
+  {
+    "label": "full-after",
+    "command": [
+      "npm",
+      "test",
+      "--",
+      "--runInBand"
+    ],
+    "cwd": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/cordova-cache",
+    "exit": 0,
+    "log": "<local-user>/.openclaw/workspace/projects/revenuecat-bug-reporter/publication/2026-10-20/logs/cordova-cache-full-after.log",
+    "seconds": 1.82
+  }
+]

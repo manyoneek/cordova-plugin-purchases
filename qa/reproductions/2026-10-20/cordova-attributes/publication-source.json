@@ -1,0 +1,6 @@
+{
+  "base": "f83961e065b9bf09684c2fda0156ce4564173881",
+  "head": "38066a77c97d8bff2dc357e3c3d6f7358e0a18f1",
+  "branch": "fix/ios-null-attribute-deletion",
+  "freshFullAppRun": false
+}
