@@ -22,7 +22,8 @@ import PurchasesHybridCommon
 
     @objc(setAttributes:)
     func setAttributes(command: CDVInvokedUrlCommand) {
-        guard let attributes = command.arguments[0] as? [String: String] else {
+        guard let attributes = command.arguments[0] as? [String: Any],
+              attributes.values.allSatisfy({ $0 is String || $0 is NSNull }) else {
             self.sendBadParameterFor(command: command, parameterNamed: "attributes", expectedType: NSDictionary.self)
             return
         }
@@ -175,12 +176,13 @@ import PurchasesHybridCommon
 private extension CDVPurchasesPlugin {
 
     func setSubscriberAttribute(command: CDVInvokedUrlCommand, name: String, setFunction: (String) -> Void) {
-        guard let setValue = command.arguments[0] as? NSString else {
+        let argument = command.arguments[0]
+        guard argument is String || argument is NSNull else {
             self.sendBadParameterFor(command: command, parameterNamed: name, expectedType: NSString.self)
             return
         }
 
-        setFunction(setValue as String)
+        setFunction(argument as? String ?? "")
         self.sendOKFor(command: command)
     }
 
